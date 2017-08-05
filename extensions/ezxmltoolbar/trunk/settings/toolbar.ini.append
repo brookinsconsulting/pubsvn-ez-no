@@ -1,0 +1,10 @@
+<?php /* #?ini charset="utf8"?
+
+[Tool]
+AvailableToolArray[]=right_content
+
+[Tool_right_content]
+show_subtree=
+attribute_identifier=
+
+*/ ?>

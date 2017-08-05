@@ -1,0 +1,127 @@
+
+/* Styles for XML tags */
+
+/* style <literal class="php_code"> */
+pre.geshi_code
+{
+    background-color: #e0e0e0;
+    border: 1px #444 solid;
+    padding: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/* if, else etc. */
+pre.geshi_code span.kw1
+{
+    color: #007700;
+}
+
+/* <? ?>, true, false etc. */
+pre.geshi_code span.kw2
+{
+    color: #000077;
+}
+
+/* function */
+pre.geshi_code span.kw3
+{
+    color: #007700;
+}
+
+/* function */
+pre.geshi_code span.kw4
+{
+    color: #770000;
+}
+
+/* function */
+pre.geshi_code span.kw5
+{
+    color: #777700;
+}
+
+/* function */
+pre.geshi_code span.kw6
+{
+    color: #770077;
+}
+
+/* function */
+pre.geshi_code span.kw7
+{
+    color: #007777;
+}
+
+/* method1 */
+pre.geshi_code span.me1
+{
+    color: #007700;
+}
+
+/* method2 */
+pre.geshi_code span.me2
+{
+    color: #00dd00;
+}
+
+
+/* brackets */
+pre.geshi_code span.br0
+{
+    color: #007700;
+}
+
+/* regexps: variables */
+pre.geshi_code span.re0
+{
+    color: #0000ff;
+}
+pre.geshi_code span.re1
+{
+    font-style: italic;
+}
+
+/* strings */
+pre.geshi_code span.st0
+{
+    color: #dd0000;
+}
+
+/* numbers */
+pre.geshi_code span.nu0
+{
+    color: #770000;
+}
+
+/* comments */
+pre.geshi_code span.co1, pre.geshi_code span.coMULTI
+{
+    color: #ff8000;
+}
+
+
+/* style <literal class="shell_code"> */
+pre.bash_code
+{
+    background-color: #e0e0e0;
+    border: 1px #444 solid;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/* internal commands: cd etc. */
+pre.bash_code span.kw3
+{
+    color: #007700;
+}
+
+/* style <literal class="ini_code"> */
+pre.ini_code
+{
+    background-color: #f0f0e8;
+    border: 1px #444 solid;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+

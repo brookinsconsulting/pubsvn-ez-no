@@ -1,0 +1,108 @@
+survey extension 3.3 INSTALL
+
+Introduction
+============
+
+1. What is the survey extension?
+   --------------------------------
+
+   Survey module for eZ publish
+
+   For more information about this extension please read the README file.
+
+1. License
+   -------
+
+   This software is licensed under the GPL. The complete
+   license agreement is included in the LICENSE file. For more information
+   or questions please contact info@ez.no
+
+2. Requirements
+   ------------
+
+   The following requirements exists for using the survey extension:
+
+   o  eZ publish version:
+
+      Make sure you use eZ publish version 3.3 or higher.
+
+   o  PHP version:
+
+      Make sure you have PHP 4 or higher.
+
+
+Getting eZ publish
+==================
+
+You can download a version of eZ publish from ez.no, you will find the
+various versions at:
+http://ez.no/ez_publish/download/
+
+NOTE: You will require eZ publish 3.3 or higher
+
+Information on the installation of eZ publish can be found at:
+http://ez.no/ez_publish/documentation/installation
+
+
+Installing survey extension
+====================================
+
+1. Copy the package into the `extension' directory in the root of your
+   eZ publish installation.
+
+2. Unpack the files in the distribution. The command necessary is depends on
+   the file you downloaded.
+   [tar.gz]:
+   $ tar -zxvf survey-extension-3.3.tar.gz
+   [bz2]:
+   $ tar -jxvf survey-extension-3.3.bz2
+   [zip]:
+   $ unzip survey-extension-3.3.zip
+
+3. We must now enable the extension in eZ publish. To do this edit
+   site.ini.append(.php) in the folder root_of_ezpublish/settings. If this
+   file does not exist; create it. Locate (or add) the block
+   [ExtensionSettings] and add the line:
+
+   ActiveExtensions[]=survey
+
+   If you run several sites using only one distribution and only some of the
+   sites should use the extension, make the changes in the override file of
+   that siteaccess. 
+   E.g root_of_ezpublish/settings/siteaccess/news/site.ini.append(.php)
+   But instead of using ActiveExtensions you must add these lines instead:
+
+   [ExtensionSettings]
+   ActiveAccessExtensions[]=survey
+
+
+Initializing database
+=====================
+
+1. Manual install
+   --------------
+
+   o  Initialize schema
+
+     The new tables use in this extension must be inserted in the
+     database. The script used to create this tables is in 
+     sql/schema.sql. You can insert the schema in the database as follows:
+
+        $ mysql  -u <user> -p <dbname> < sql/schema.sql
+
+
+Troubleshooting
+===============
+
+1. Read the FAQ
+   ------------
+
+   Some problems are more common than others. The most common ones are listed
+   in the the FAQ.
+
+2. Support
+   -------
+
+   If you have find any problems not handled by this document or the FAQ you
+   can contact eZ system trough the support system:
+   http://ez.no/services/support

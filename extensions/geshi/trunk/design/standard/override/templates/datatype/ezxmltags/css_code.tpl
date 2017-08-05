@@ -1,0 +1,1 @@
+{$content|geshi_hl( 'css' )}

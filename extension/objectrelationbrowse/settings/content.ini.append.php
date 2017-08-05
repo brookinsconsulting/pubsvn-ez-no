@@ -1,0 +1,3 @@
+[DataTypeSettings]
+ExtensionDirectories[]=objectrelationbrowse
+AvailableDataTypes[]=ezobjectrelationbrowse

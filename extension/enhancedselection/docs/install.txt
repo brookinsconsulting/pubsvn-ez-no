@@ -1,0 +1,15 @@
+Enhanced Selection Datatype
+---------------------------
+
+Installation instructions:
+
+- Either unpack the archive, or get the latest version from SVN.
+  URL: http://pubsvn.ez.no/community/trunk/extension/enhancedselection
+
+- Place the 'enhancedselection' folder in the 'extension' folder.
+
+- Open /settings/override/site.ini.append(.php) and add the enhancedselection
+  extension to the active extensions.
+
+  [ExtensionSettings]
+  ActiveExtensions[]=enhancedselection

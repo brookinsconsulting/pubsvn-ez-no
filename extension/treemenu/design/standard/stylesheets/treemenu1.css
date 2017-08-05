@@ -1,0 +1,31 @@
+/* treemenu stylesheet */
+.list1
+{ 
+        list-style-image:url(/extension/treemenu/design/standard/images/treemenu1/menulevel1.gif);
+        list-style-position: outside;
+}
+.list2
+{
+        list-style-image:url(/extension/treemenu/design/standard/images/treemenu1/menulevel2.gif);
+        list-style-position: outside;
+}
+.list3
+{
+        list-style-image:url(/extension/treemenu/design/standard/images/treemenu1/menulevel3.gif);
+        list-style-position: outside;
+}
+.list3withchildren
+{
+        list-style-image:url(/extension/treemenu/design/standard/images/treemenu1/menulevel3withchildren.gif);
+        list-style-position: outside;
+}
+.list3a
+{
+        list-style-image:url(/extension/treemenu/design/standard/images/treemenu1/menulevel3active.gif);
+        list-style-position: outside;
+}
+.list2a
+{
+        list-style-image:url(/extension/treemenu/design/standard/images/treemenu1/menulevel2active.gif);
+        list-style-position: outside;
+}

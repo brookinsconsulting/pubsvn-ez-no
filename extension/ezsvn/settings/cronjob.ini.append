@@ -1,0 +1,5 @@
+[CronjobSettings]
+ScriptDirectories[]=extension/ezsvn/bin
+
+[CronjobPart-ezsvn]
+Scripts[]=ezsvn.php

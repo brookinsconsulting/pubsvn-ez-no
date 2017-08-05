@@ -1,0 +1,1 @@
+<u id="custom_underline"{section show=$classification} class="{$classification}"{/section} lang="{$attstr}">{$content}</u>

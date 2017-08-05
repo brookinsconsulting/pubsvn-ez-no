@@ -1,0 +1,8 @@
+[ExtensionSettings]
+ActiveExtensions[]=soap
+
+[SiteAccessSettings]
+AnonymousAccessList[]=soap/server
+
+[RoleSettings]
+PolicyOmitList[]=soap/server

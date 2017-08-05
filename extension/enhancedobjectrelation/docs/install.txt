@@ -1,0 +1,21 @@
+Enhanced Selection Datatype
+---------------------------
+
+Installation instructions:
+
+- Either unpack the archive, or get the latest version from SVN.
+  URL: http://pubsvn.ez.no/community/trunk/extension/enhancedobjectrelation
+
+
+- Place the 'enhancedselection' folder in the 'extension' folder.
+
+- Open /settings/override/site.ini.append(.php) and add the enhancedobjectrelation
+  extension to the active extensions.
+
+  [ExtensionSettings]
+  ActiveExtensions[]=enhancedobjectrelation
+
+- Modify the table structure used for the object relation to add a attribute oject version 
+sql > alter table ezcontentobject_link add contentclassattribute_id int(11) NULL default null;
+
+Please read the readme.txt to have more informations

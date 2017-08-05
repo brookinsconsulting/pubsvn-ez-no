@@ -1,0 +1,15 @@
+<?php /* #?ini charset="utf8"?
+
+[xmlarea_embed_image]
+Source=xmlarea/ezxmltags/object.tpl
+MatchFile=xmlarea_embed_image.tpl
+Subdir=templates
+Match[class_identifier]=image
+
+[xmlarea_embed_file]
+Source=xmlarea/ezxmltags/object.tpl
+MatchFile=xmlarea_embed_file.tpl
+Subdir=templates
+Match[class_identifier]=file
+
+*/ ?>

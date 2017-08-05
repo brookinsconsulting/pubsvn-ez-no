@@ -1,0 +1,1 @@
+{$object.class_identifier|class_icon( normal, $object.name )|add_xmlarea_attributes( $attributes )}

@@ -1,0 +1,25 @@
+[PayPalSettings]
+URL=https://www.paypal.com/cgi-bin/webscr
+Delimiter=,
+
+[HostingPlan1]
+method=post
+on0=Domainname
+os0=mydomain
+os0_type=input
+on1=Top-Level-Domain
+os1=.de,.com,.net,.org,.info,.biz,.name,.at,.co.uk,.org.uk,.me.uk
+os1_type=select
+cmd=_xclick-subscriptions
+business=service@example.com
+item_name=Hosting Plan 1
+item_number=Hosting Plan 1
+no_note=1
+currency_code=EUR
+image=https://www.paypal.com/images/x-click-butcc.gif
+image_alt=Make payments with PayPal - it's fast, free and secure
+a3=10.00
+p3=1
+t3=M
+src=1
+sra=1

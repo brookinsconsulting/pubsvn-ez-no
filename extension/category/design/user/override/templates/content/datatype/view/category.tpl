@@ -1,0 +1,1 @@
+{$attribute.content.category_string|wash(xhtml)}

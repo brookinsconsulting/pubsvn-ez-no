@@ -1,0 +1,1 @@
+<blockquote id="custom_quote"{section show=$classification} class="{$classification}"{/section} lang="{$attstr}">{$content}</blockquote>

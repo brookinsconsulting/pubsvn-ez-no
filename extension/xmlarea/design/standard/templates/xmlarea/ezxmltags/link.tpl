@@ -1,0 +1,1 @@
+<a href="{$href}" {section show=$target}target="{$target}"{/section}>{$content}</a>

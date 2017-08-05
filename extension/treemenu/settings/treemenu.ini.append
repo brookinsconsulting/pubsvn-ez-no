@@ -1,0 +1,21 @@
+#?ini charset="iso-8859-1"?
+# Use for treemenu1 and treemenu2
+
+[Settings]
+#If we can't determine a node we show treemenu's home which is in most cases the frontpage of a siteaccess
+Home=269
+
+#Supports dynamic and static view. A static view will have it's offset in Home. Treemenu1 only.
+Dynamic=enabled
+
+#The current Node is highlighted
+HighlightUsedNode=enabled
+
+#Displays children of Nodes that are not highlighted
+WithChildren=enabled
+
+#Nodes will not be displayed if they are not in the subtree of Home. Treemenu1 only.
+HideIfHomeNotInPath=disabled
+
+#Helps to display more information, if a the current Node has no Children. Treemenu1 only.
+FallbackIfUsedNodeWithoutChildren=enabled

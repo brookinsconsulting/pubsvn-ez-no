@@ -1,0 +1,127 @@
+//
+// Definition of Worldpay module
+//
+// Created on: <30-August-2003 TW>
+//
+// Copyright (C) 1999-2003 Vision with Technology, All rights reserved.
+// http://www.visionwt.com
+//
+// This file may be distributed and/or modified under the terms of the
+// "GNU General Public License" version 2 as published by the Free
+// Software Foundation 
+//
+// This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+// THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE.
+//
+// The "GNU General Public License" (GPL) is available at
+// http://www.gnu.org/copyleft/gpl.html.
+//
+// Contact licence@visionwt.com if any conditions of this licencing isn't clear to
+// you.
+//
+/*
+Author:       Tony Wood
+Version:      $Id: manual.txt,v 1.8 2003/12/16 10:41:39 paulf Exp $
+*/
+
+# Worldpay Module manual
+
+INSTRUCTIONS
+--------------------------
+
+Extract the WorldPay extension to extension directory within the ez root directory.
+
+WORLDPAY
+--------------------
+
+#Account required
+
+You must have WorldPay Direct  account 
+Ref: http://www.worldpay.co.uk/sme/index.php?go=sme_apply
+
+#Integration method with WorldPay
+
+This solution will enable you to integrate with WorldPay using the Select Junior method 
+Ref: http://support.worldpay.com/integrations/jnr/index.html
+
+#To update exchange rates
+
+You must put the following command in your nightly cron to get the daily exchange rate
+wget 'https://select.worldpay.com/wcc/info?op=rates&instId=99999' -O /path/to/project/settings/override/xrate.ini.append.php
+
+ADDING THE EXTENSION TO EZ
+-----------------------------------------------------
+
+#INI files to set
+
+File: site.ini
+
+[ExtensionSettings]
+ExtensionDirectory=extension
+ActiveExtensions[]=worldpay
+
+File: workflow.ini.append.php ** Note we are not 100% sure if this is needed but add it anyway.
+
+# get workflow events from the extension when it's turned on.
+[EventSettings]
+ExtensionDirectories[]=worldpay
+
+#Worldpay.ini file settings
+
+Price difference is the difference from the orignal price when exchange rates are calculated
+Password is the password you set in worlpay admin to ensure that the http call us worldpay.
+
+#User settings
+
+The file 'worldpaytype.php' requires the user class to contain the correct attributes. These are, in order:
+
+Datatype | Name
+
+Text line - First name
+Text line - Last name
+User account - User account
+Text line - Company name
+Matrix - Address
+Text line - Telephone Number
+Country - Country
+
+Within 'worldpaytype.php' this is defined as:
+
+define( "VWT_FIRST_NAME", 0 );
+define( "VWT_LAST_NAME", 1 );
+define( "VWT_USER", 2 );
+define( "VWT_COMPANY", 3 );
+define( "VWT_ADDRESS", 4 );
+define( "VWT_TEL", 5 );
+define( "VWT_COUNTRY", 6 );
+
+If you want to add a special shop user read these instructions:
+
+http://ez.no/developer/ez_publish_3/documentation/incoming/tutorial_using_userregister
+
+If you do not then modify your user class to include these attributes. Note, 'Country' is an unpublished
+datatype but it is based on the ezcountry datatype within the contributions. Publication may happen soon. To
+get around this you can just use a Text line attribute.
+
+#What does this module not include
+
+checks for fraud, subscription payments, only standard single transaction payment is accepted.
+
+WORKFLOW PROCESS
+---------------------------------------
+1. Shopper adds items to basket
+2. Shopper clicks view basket - This show user basket
+3. Shopper clicks confirm order - This run /shop/checkout which kicks off worldpaytype workflow
+4. worldpaytype.tpl has post data which it it Javascript refreshes to worldpay site
+5. Shopper enters credit card details in Worldpay site
+6. Worldpay sends transaction data view HTTP to /worldpay/checkout
+7. callback.php checks to ensure all is in order, if it is it automatically completes the workflow and returns the orderview for the order.
+
+FUTURE WORK
+--------------------------
+
+* Improve xrate.ini download script as if the wget fails it does not inform anyone and it prevents payment from site.
+* Improve basket clearing routine, the basket should only be cleared on a sucessful transation. At the moment it is cleared when the first pass worldpay workflow is run.
+* Store extra reporting data and create reports.
+* Store IP address of ordering client to help reduce fraud

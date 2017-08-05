@@ -1,0 +1,6 @@
+#?ini charset="iso-8859-1"?
+# eZ publish configuration file for content
+
+[DataTypeSettings]
+ExtensionDirectories[]=category
+AvailableDataTypes[]=category

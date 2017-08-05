@@ -1,0 +1,10 @@
+<?php /* #?ini charset="utf8"?
+
+[string_svncomposition_base_edit]
+Source=content/datatype/edit/ezstring.tpl
+MatchFile=ezstring.tpl
+Subdir=templates
+Match[class_identifier]=svncomposition
+Match[attribute_identifier]=base
+
+*/ ?>

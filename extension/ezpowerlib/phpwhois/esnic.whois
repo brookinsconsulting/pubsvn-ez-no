@@ -1,0 +1,139 @@
+<?php
+
+/*
+  Whois2.php	PHP classes to conduct whois queries
+  
+  Copyright (C)1999,2000 easyDNS Technologies Inc. & Mark Jeftovic 
+  
+  Maintained by Mark Jeftovic <markjr@easydns.com>
+  
+  For the most recent version of this package: 
+  
+  http://www.easydns.com/~markjr/whois2/
+  
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+*/
+
+/* esnic.whois	1.0  David Saez Padros <david@ols.es> */
+/* esnic.whois  1.1  David Saez Padros <david@ols.es> */
+
+if(!defined("__ESNIC_HANDLER__")) define("__ESNIC_HANDLER__",1);
+
+require_once('generic3.whois');
+
+function buscar ($what, $where)
+{
+	$search = trim(strstr($what[0],' '));
+
+	while (list ($key, $val) = each ($where)) {
+		if (array_search($search,$val))
+			return $val; 
+		}
+	return '';
+}
+
+class esnic extends Whois {
+
+	function esnic($data) {
+		$this->result = $this->parse($data);
+	}
+
+	function parse ($data_str) {
+
+		$items = array( 'domain.name' => 'Nombre del dominio ',
+				'domain.status' => 'Estado ',
+				'domain.created' => 'Fecha de Alta ',
+				'domain.expires' => 'Fecha Caducidad ',
+				'domain.nserver' => 'Nombre Servidor:',
+				'domain.sponsor' => 'Agente Registrador',
+				'owner' => 'Tipo de Contacto  Titular:',
+				'admin' => 'Tipo de Contacto  Administrativo:',
+				'billing' => 'Tipo de Contacto  Facturación:',
+				'tech' => 'Tipo de Contacto  Técnico:'
+				);
+
+		$citms = array ( 'handle' => 'NIC_HANDLE',
+				'name' => 'Nombre',
+				'type' => 'Tipo de Titular',
+				'organization' => 'Organización',
+				'email' => 'EMAIL',
+				'phone' => 'Teléfono',
+				'fax' => 'Fax',
+				'address' => 'Domicilio',
+				'city' => 'Población',
+				'zcode' => 'Código Postal',
+				'country' => 'País'
+				);
+
+		$data = array();
+		$cont = array();
+		$curr = array();
+		$cdat = true;
+
+		while (list ($key, $val) = each ($data_str['rawdata'])) {
+			if (trim($val)=='DETALLES CONTACTOS') {
+				$cdat = false;
+				continue;
+				}
+			if (trim($val)=='SERVIDORES DNS') {
+				$cdat = true;
+				continue;
+				}
+			if (trim($val)=='Nombre Servidor  IP') {
+				$data[]='Nombre Servidor:';
+				continue;
+				}
+			if (substr($val,0,17)=='Tipo de Contacto ') {
+				$data[]=$val.':';
+				continue;
+				}
+			if ($cdat) {
+				$data[]=$val;
+				}
+			else {
+				if (substr($val,0,10)=='NIC_HANDLE') {
+					if (!empty($curr))
+						$cont[] = get_blocks($curr,$citms);
+					$curr = array();
+					}
+				$curr[]=$val;
+				}
+			}
+
+		if (!empty($curr))
+                	$cont[] = get_blocks($curr,$citms);
+
+		$r['regrinfo'] = get_blocks($data,$items);
+
+		if (isset($r['regrinfo']['domain']['name'])) {
+			$r['regrinfo']['owner'] = buscar($r['regrinfo']['owner'],$cont);
+			$r['regrinfo']['admin'] = buscar($r['regrinfo']['admin'],$cont);
+			$r['regrinfo']['billing'] = buscar($r['regrinfo']['billing'],$cont);
+			$r['regrinfo']['tech'] = buscar($r['regrinfo']['tech'],$cont);
+			$r['regrinfo']['registered']='yes';
+			}
+		else
+			$r['regrinfo']['registered']='no';
+
+		$r['regyinfo'] = array('referrer'=>'http://www.nic.es',
+				       'registrar'=>'ES-NIC' );
+
+		$r['rawdata'] = $data_str['rawdata'];
+
+                return $r;
+	}
+}
+
+?>

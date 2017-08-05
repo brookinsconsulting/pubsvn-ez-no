@@ -1,0 +1,3 @@
+[EventSettings]
+ExtensionDirectories[]=shopsender
+AvailableEventTypes[]=event_ezshopsender

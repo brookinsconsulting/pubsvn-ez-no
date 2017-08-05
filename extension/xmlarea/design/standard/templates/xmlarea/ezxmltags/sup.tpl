@@ -1,0 +1,1 @@
+<sup id="custom_sup"{section show=$classification} class="{$classification}"{/section} lang="{$attstr}">{$content}</sup>

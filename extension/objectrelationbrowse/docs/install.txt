@@ -1,0 +1,14 @@
+Object Relation Browse Datatype
+-------------------------------
+
+Installation instructions:
+
+- Unpack the archive and place the 'objectrelationbrowse' folder in the 'extension' folder.
+
+- Open /settings/override/site.ini.append(.php) and add the objectrelationbrowse
+  extension to the list of active extensions.
+
+  [ExtensionSettings]
+  ActiveExtensions[]=objectrelationbrowse
+
+Please read readme.txt for more information.

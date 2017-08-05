@@ -1,0 +1,30 @@
+PEAR::SVN Test Framework
+------------------------
+
+This is a test framework for SVN built using PHPUnit. 
+
+
+Usage
+------------------------
+In order for any of these tests to work, they need to access a 
+Subversion repository.
+
+To set up the tests:
+
+- Requires PHPUnit
+
+- Requires SVN to be installed in a php include path, or the 
+  tests need to be moved into the SVN root path.
+  
+- Hit test.php with a browser for the results, and get to work
+  fixing bugs!
+
+  
+Writing tests
+------------------------
+The tests are all written using PHPUnit from pear, so first make
+sure you have the latest stable release of PHPUnit, and have read
+the PHPUnit docs at:
+http://pear.php.net/manual/en/package.php.phpunit.php
+
+$Id: README 12 2004-04-13 12:47:20Z clay $

@@ -1,0 +1,8 @@
+<?php /* #?ini charset="iso-8859-1"?
+
+[EventSettings]
+RepositoryDirectories[]=extension/worldpay/eventtypes/worldpay
+
+AvailableEventTypes[]=event_worldpay
+
+*/ ?>

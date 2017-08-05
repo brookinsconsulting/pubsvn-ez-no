@@ -1,0 +1,6 @@
+#?ini charset="iso-8859-1"?
+
+[xmlarea]
+SiteDesign=admin
+PageLayout=xmlarea_pagelayout.tpl
+

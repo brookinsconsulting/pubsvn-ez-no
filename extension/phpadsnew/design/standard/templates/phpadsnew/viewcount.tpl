@@ -1,0 +1,3 @@
+<div id="beacon_{$data[bannerid]}" style="position: absolute; left: 0px; top: 0px; visibility: hidden;">
+    <img src="/extension/phpadsnew/phpadsnew/adlog.php?bannerid={$data[bannerid]}&amp;clientid={$data[clientid]}&amp;zoneid={$data[zoneid]}&amp;source={$data.[ext_source]}&amp;block={$data[block]}&amp;capping={$data[capping]}&amp;cb={$data[ext_cb]}" width="0" height="0" alt="" style="width: 0px; height: 0px;" />
+</div>

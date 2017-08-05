@@ -1,0 +1,1 @@
+<h{$level} {section show=$classification} class="{$classification}"{/section}{section show=$name} lang="{$name}"{/section}>{$content}</h{$level}>

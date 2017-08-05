@@ -1,0 +1,5 @@
+[CronjobSettings]
+ScriptDirectories[]=extension/ezadmin/bin
+
+[CronjobPart-fixscript]
+Scripts[]=fixscript.php

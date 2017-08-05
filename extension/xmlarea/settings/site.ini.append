@@ -1,0 +1,8 @@
+#?ini charset="iso-8859-1"?
+
+[TemplateSettings]
+
+ExtensionAutoloadPath[]=ezbrowsersniff
+ExtensionAutoloadPath[]=xmlarea
+
+TemplateCompile=disabled

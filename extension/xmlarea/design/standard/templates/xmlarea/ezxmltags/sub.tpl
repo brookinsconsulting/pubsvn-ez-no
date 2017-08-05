@@ -1,0 +1,1 @@
+<sub id="custom_sub"{section show=$classification} class="{$classification}"{/section} lang="{$attstr}">{$content}</sub>

@@ -1,0 +1,7 @@
+[SiteAccessSettings]
+#AnonymousAccessList[]=svn/client
+AnonymousAccessList[]=svn/configserver
+
+[RoleSettings]
+#PolicyOmitList[]=svn/client
+PolicyOmitList[]=svn/configserver

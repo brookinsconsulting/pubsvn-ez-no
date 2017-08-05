@@ -1,0 +1,68 @@
+/* treemenu2 stylesheet */
+
+.vsidemenu 
+{
+    font-size: 70%;
+    color: #000000;
+    text-align: left;
+    text-decoration: none;
+}
+
+.vsidemenu-gap, .vsidemenu-top, .vsidemenu-sub, .vsidemenu-link, .vsidemenu-line
+{
+	padding-top:2px;
+}
+
+.vsidemenu-top {
+	font-weight: bold;
+    color: #000000;
+}
+
+.vsidemenu-top a:link, .vsidemenu-top a:visited, .vsidemenu-top a:active
+{
+    color: #000000;
+	text-decoration:none;
+}
+
+.vsidemenu-top a:hover{
+    color: #000000;
+	text-decoration:underline;
+}
+
+.vsidemenu-sub {
+	font-weight: bold;
+    color: #555555;
+}
+
+.vsidemenu-sub a:link, .vsidemenu-sub a:visited, .vsidemenu-sub a:active
+{
+    color: #555555;
+	text-decoration:none;
+}
+
+.vsidemenu-sub a:hover
+{
+    color: #555555;
+	text-decoration:underline;
+}
+
+.vsidemenu-link {
+    color: #000000;
+	text-decoration:none;
+}
+
+.vsidemenu-link a:link, .vsidemenu-link a:visited, .vsidemenu-link a:active
+{
+    color: #000000;
+	text-decoration:none;
+}
+
+.vsidemenu-link a:hover{
+    color: #000000;
+	text-decoration:underline;
+}
+
+.vsidemenu-arrow{
+	padding-left:5px;
+	padding-top:2px;
+}

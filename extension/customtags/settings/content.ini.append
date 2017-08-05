@@ -1,0 +1,5 @@
+[CustomTagSettings]
+AvailableCustomTags[]=clickandbuy
+
+[CustomTagSettings]
+IsInline[clickandbuy]=true

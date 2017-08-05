@@ -1,0 +1,1 @@
+<div id="custom_factbox"{section show=$classification} class="{$classification}"{/section} lang="{$attstr}">{$content}</div>
